@@ -1,0 +1,7 @@
+.copylink-container{
+    width: 300px;
+    margin: 0 auto;
+}
+.copylink-container:hover{
+    background-color:#b3b1b1;
+}

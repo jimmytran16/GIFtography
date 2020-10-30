@@ -1,0 +1,19 @@
+.search-container{
+    text-align: center;
+    margin: 20px auto;
+}
+
+.search-container input {
+    padding: 5px 10px;
+}
+
+.btn {
+    margin-left: 20px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+
+.col-md-4{
+    border-color: grey;
+}
+
