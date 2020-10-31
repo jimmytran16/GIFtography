@@ -1,3 +1,16 @@
 .img-gif{
     margin-top:20px;
+    width:300px
+}
+
+@media screen and (max-width:1200px) {
+    .img-gif{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .img-gif{
+        width: 300px;
+    }
 }

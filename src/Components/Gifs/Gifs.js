@@ -2,10 +2,11 @@ import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios';
 import ImageGif from '../ImageGif/ImageGif';
 import CopyLink from '../CopyLink/CopyLink';
-import configs from '../../configs/config'; 
+import configs from '../../configs/config';
 import './Gifs.css';
 
 function Gifs() {
+
     // states
     const [resultlist, setResultList] = useState([]);
     const [msg, setMsg] = useState("");
@@ -19,11 +20,13 @@ function Gifs() {
         searchRef.current.value = null;
     }
 
+    // func to clear the results
     function clearResult() {
         setResultList([]);
     }
 
-    function clearMsg(){
+    // func to clear the error message
+    function clearMsg() {
         setMsg("");
     }
 
@@ -36,7 +39,7 @@ function Gifs() {
         // get the search query by getting the reference
         const query = searchRef.current.value;
         const api_key = configs.api_key;
-        const url = 'https://api.giphy.com/v1/gifs/search?q='+query+'&api_key='+api_key+'&limit=9';
+        const url = 'https://api.giphy.com/v1/gifs/search?q=' + query + '&api_key=' + api_key + '&limit=12';
 
         // call the API endpoint to get back results
         axios.get(url)
@@ -47,7 +50,7 @@ function Gifs() {
                     savedArray.push(item);
                 })
                 // check if the array is empty, then there was no results returned back!
-                if( savedArray.length === 0 ) {
+                if (savedArray.length === 0) {
                     setMsg("No Search Results!");
                     return;
                 }
@@ -71,13 +74,12 @@ function Gifs() {
                 {
                     resultlist.map(item => {
                         return (
-                            <div className="col-md-4">
+                            <div className="col-sm-4 col-md-3">
                                 {/* Gif image Component */}
                                 <ImageGif url={item.images.original.url} />
                                 {/* Copy Link Component */}
                                 <CopyLink link={item.images.original.url} />
                             </div>
-                        
                         )
                     })
                 }

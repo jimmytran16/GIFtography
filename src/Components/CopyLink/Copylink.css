@@ -5,3 +5,16 @@
 .copylink-container:hover{
     background-color:#b3b1b1;
 }
+
+
+@media screen and (max-width:1200px) {
+    .copylink-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .copylink-container{
+        width: 300px;
+    }
+}

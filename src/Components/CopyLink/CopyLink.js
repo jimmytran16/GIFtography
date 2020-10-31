@@ -11,7 +11,7 @@ export default function CopyLink(props) {
     const copyToClipBoard = () => {
         window.navigator.clipboard.writeText(props.link);
         setStyle({
-            'backgroundColor':'#3a6d3a'
+            'backgroundColor':'rgb(88 136 88)'
         })
     }
     
